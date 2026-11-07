@@ -8,7 +8,7 @@ Labelize Printer is a local virtual printer that saves print jobs as PDF or PNG.
 brew install --cask goodboy008/labelize-printer/labelize-printer
 ```
 
-Open Labelize Printer from Applications to add the local printer and choose where to save files. The v0.1.1 preview PKG is unsigned. See the release notes for validation details and the Windows and Linux installers. [Printer releases](https://github.com/GOODBOY008/labelize-printer/releases)
+Open Labelize Printer from Applications to add the local printer and choose where to save files. Use the language button in the title bar to switch between English and Simplified Chinese. The macOS PKGs are unsigned. See the release notes for validation details and the Windows and Linux installers. [Printer releases](https://github.com/GOODBOY008/labelize-printer/releases)
 
 ## Upgrade and uninstall
 

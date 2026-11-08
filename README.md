@@ -1,6 +1,6 @@
 # Labelize Printer Homebrew tap
 
-Labelize Printer is a local virtual printer that saves print jobs as PDF or PNG. This tap distributes the macOS PKG for Apple Silicon and Intel. The package requires macOS 13 or later. [Labelize Printer](https://github.com/GOODBOY008/labelize-printer) · [简体中文](https://github.com/GOODBOY008/labelize-printer/blob/main/README.zh-CN.md)
+Labelize Printer is a local virtual printer and label workspace that saves labels as PDF or PNG. This tap distributes the macOS PKG for Apple Silicon and Intel, targeting macOS 13 or later. [Project and documentation](https://github.com/GOODBOY008/labelize-printer)
 
 ## Install
 
@@ -8,7 +8,9 @@ Labelize Printer is a local virtual printer that saves print jobs as PDF or PNG.
 brew install --cask goodboy008/labelize-printer/labelize-printer
 ```
 
-Open Labelize Printer from Applications to add the local printer and choose where to save files. Use the language button in the title bar to switch between English and Simplified Chinese. The macOS PKGs are unsigned. See the release notes for validation details and the Windows and Linux installers. [Printer releases](https://github.com/GOODBOY008/labelize-printer/releases)
+Open Labelize Printer from Applications to add the local printer and choose where to save files. Since v0.2.0, the Labels workspace also opens ZPL, EPL, TSPL/TSC, CPCL, and DPL files, previews every page, and saves PDF/PNG. The visual designer supports text, Code 128, QR codes, rectangles, and images, with portable `.labelize.json` templates and font import for Chinese and other scripts.
+
+Use the title-bar language button to switch between English and Simplified Chinese. The macOS PKGs are unsigned, and app bundles use ad-hoc signatures. See the release notes for verified environments, outstanding desktop checks, and Windows/Linux installers. [Printer releases](https://github.com/GOODBOY008/labelize-printer/releases)
 
 ## Upgrade and uninstall
 

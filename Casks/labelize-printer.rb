@@ -1,13 +1,13 @@
 cask "labelize-printer" do
   arch arm: "arm64", intel: "x86_64"
 
-  version "0.1.2"
-  sha256 arm:   "8e4277713f61da63e283c076f4481763b4dd561b7fff157342dc39a0b3231652",
-         intel: "01277d9c8086e7bd81c188dfe56ac2c611cbc73c87b364489b1b51dba0e64690"
+  version "0.2.0"
+  sha256 arm:   "ac220a60022cfa097192a5cbdb25b7af6f4fa17ab07a026b2e11b3137250e6d9",
+         intel: "e61e5db3f03d4a7fad9dbe2cd706248b28d1c494514030875efb9efbbb661a0b"
 
   url "https://github.com/GOODBOY008/labelize-printer/releases/download/v#{version}/LabelizePrinter-#{version}-macos-#{arch}-release.pkg"
   name "Labelize Printer"
-  desc "Virtual printer for saving print jobs as PDF or PNG"
+  desc "Label designer and virtual printer with PDF and PNG output"
   homepage "https://github.com/GOODBOY008/labelize-printer"
 
   depends_on macos: :ventura

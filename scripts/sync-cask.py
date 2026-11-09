@@ -6,8 +6,8 @@ from pathlib import Path
 from urllib.request import urlopen
 
 
-REPO = "GOODBOY008/labelize-printer"
-CASK = Path(__file__).resolve().parents[1] / "Casks" / "labelize-printer.rb"
+REPO = "GOODBOY008/labelize-studio"
+CASK = Path(__file__).resolve().parents[1] / "Casks" / "labelize-studio.rb"
 VERSION = r"(?:0|[1-9][0-9]*)\.(?:0|[1-9][0-9]*)\.(?:0|[1-9][0-9]*)"
 SHA256 = r"[0-9a-f]{64}"
 CASK_RELEASE = re.compile(
@@ -28,7 +28,7 @@ def latest_release():
     ]))
     releases = [
         release for page in pages for release in page
-        if not release["draft"] and re.fullmatch(f"v{VERSION}", release["tag_name"])
+        if not release["draft"] and not release["prerelease"] and re.fullmatch(f"v{VERSION}", release["tag_name"])
     ]
     if not releases:
         raise ValueError(f"No published vX.Y.Z release found in {REPO}")
@@ -62,7 +62,7 @@ def package_hashes(release, version):
 
     hashes = []
     for arch in ("arm64", "x86_64"):
-        name = f"LabelizePrinter-{version}-macos-{arch}-release.pkg"
+        name = f"LabelizeStudio-{version}-macos-{arch}-release.pkg"
         digest = asset_hash(assets, name)
         if checksums.get(name) != digest:
             raise ValueError(f"SHA256SUMS disagrees with the release asset digest for {name}")

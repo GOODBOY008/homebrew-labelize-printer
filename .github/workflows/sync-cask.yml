@@ -1,4 +1,4 @@
-name: Sync Printer release
+name: Sync Studio release
 
 on:
   schedule:
@@ -26,11 +26,11 @@ jobs:
 
       - name: Publish cask update
         run: |
-          ruby -c Casks/labelize-printer.rb
+          ruby -c Casks/labelize-studio.rb
           git diff --check
-          if git diff --quiet -- Casks/labelize-printer.rb; then exit 0; fi
+          if git diff --quiet -- Casks/labelize-studio.rb; then exit 0; fi
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add -- Casks/labelize-printer.rb
-          git commit -m 'Update Labelize Printer cask'
+          git add -- Casks/labelize-studio.rb
+          git commit -m 'Update Labelize Studio cask'
           git push origin HEAD:refs/heads/main

@@ -1,40 +1,55 @@
-# Labelize Printer Homebrew tap
+# Labelize Studio Homebrew tap
 
-Labelize Printer is a local virtual printer and multi-tab label workspace that saves labels as PDF or PNG. This tap distributes the macOS PKG for Apple Silicon and Intel, targeting macOS 13 or later. [Project and documentation](https://github.com/GOODBOY008/labelize-printer)
+[Labelize Studio](https://github.com/GOODBOY008/labelize-studio), formerly Labelize Printer, is a desktop label designer, printer-language viewer, and local virtual printer. This tap distributes the macOS PKG for Apple Silicon and Intel, targeting macOS 13 or later.
 
 ## Install
 
 ```sh
-brew install --cask goodboy008/labelize-printer/labelize-printer
+brew install --cask goodboy008/labelize-studio/labelize-studio
 ```
 
-If Homebrew reports an untrusted tap, review the [cask definition](Casks/labelize-printer.rb), then trust this cask and retry the installation:
+If Homebrew reports an untrusted tap, review the [cask definition](Casks/labelize-studio.rb), then trust this cask and retry:
 
 ```sh
-brew trust --cask goodboy008/labelize-printer/labelize-printer
-brew install --cask goodboy008/labelize-printer/labelize-printer
+brew trust --cask goodboy008/labelize-studio/labelize-studio
+brew install --cask goodboy008/labelize-studio/labelize-studio
 ```
 
-Open Labelize Printer from Applications. In **Settings → System printer**, add the local printer; use **Settings → Output defaults** for its output format and folder. The v0.3.0 **Workspace** opens ZPL, EPL, TSPL/TSC, CPCL, and DPL files in separate tabs, updates previews automatically, and restores local drafts after a restart. Each tab has its own PDF/PNG export options. The visual designer supports text, Code 128, QR codes, rectangles, and images, with portable `.labelize.json` templates and font import for Chinese and other scripts.
+Open **Labelize Studio** from Applications. Use the multi-tab workspace to open ZPL, EPL, TSPL/TSC, CPCL, and DPL files, or create a label with the visual designer's 15 object types. Preview pages and save PDF/PNG, with automatic local drafts and session recovery. Use **Settings → System printer** to add the optional **Labelize Printer** print queue.
 
-Use the language button above Settings in the sidebar to switch between English and Simplified Chinese. The macOS PKGs are unsigned, and app bundles use ad-hoc signatures. See the release notes for verified environments, outstanding desktop checks, and Windows/Linux installers. [Printer releases](https://github.com/GOODBOY008/labelize-printer/releases)
+The app supports English and Simplified Chinese. The PKGs are unsigned and the app bundles use ad-hoc signatures. See [Studio releases](https://github.com/GOODBOY008/labelize-studio/releases) for validation, known limitations, Windows/Linux installers, and SHA256SUMS.
 
-## Upgrade and uninstall
+## Upgrade from Labelize Printer
 
-For an upgrade, let pending jobs finish, quit Labelize Printer, and stop its background process.
+Let accepted jobs finish, quit the old desktop, and stop its background service:
 
 ```sh
 "/Applications/Labelize Printer.app/Contents/MacOS/labelize-printer-daemon" stop
+brew tap goodboy008/labelize-studio
 brew update
-brew upgrade --cask goodboy008/labelize-printer/labelize-printer
+brew upgrade --cask goodboy008/labelize-studio/labelize-studio
 ```
 
-To uninstall, remove the printer in the app, quit the app, and run the same `stop` command. Homebrew then removes the app and installer receipt. Saved files remain in your output folder.
+Open **Labelize Studio** once afterward to refresh the existing login-service path. The `cask_renames.json` entry migrates the old cask token. The GitHub repository redirect keeps existing tap clones usable. The printer queue, settings, job history, and workspace drafts keep their original identities; no data deletion or queue reinstallation is required. See the [migration guide](https://github.com/GOODBOY008/labelize-studio/blob/main/MIGRATION.md).
+
+## Later upgrades and uninstall
+
+Studio's **Settings → Software update** recognizes both old and new Homebrew records, saves the workspace, and offers a command to copy after safely stopping printing. It never runs Homebrew automatically. For a manual upgrade, quit the app and run:
 
 ```sh
-brew uninstall --cask goodboy008/labelize-printer/labelize-printer
+"/Applications/Labelize Studio.app/Contents/MacOS/labelize-printer-daemon" stop
+brew update
+brew upgrade --cask goodboy008/labelize-studio/labelize-studio
 ```
+
+To uninstall, remove the system printer in the app, quit, and run the same `stop` command. Then:
+
+```sh
+brew uninstall --cask goodboy008/labelize-studio/labelize-studio
+```
+
+Saved output and user data are retained. The cask continues using the original macOS package receipt and bundle ID so upgrades replace the existing installation.
 
 ## Release sync
 
-The sync workflow checks Printer releases hourly and can also run on demand. It selects the newest published `vX.Y.Z` release, including previews, and updates the cask after both macOS installer digests match `SHA256SUMS`. A changed installer needs a new version. [Sync workflow](https://github.com/GOODBOY008/homebrew-labelize-printer/actions/workflows/sync-cask.yml)
+The [sync workflow](https://github.com/GOODBOY008/homebrew-labelize-studio/actions/workflows/sync-cask.yml) checks stable Studio releases hourly and on demand. Both macOS asset digests must match the verified `SHA256SUMS` before the cask changes. Drafts and prereleases are ignored; changed installers require a new version.

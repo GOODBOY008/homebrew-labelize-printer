@@ -1,9 +1,9 @@
 cask "labelize-printer" do
   arch arm: "arm64", intel: "x86_64"
 
-  version "0.2.0"
-  sha256 arm:   "ac220a60022cfa097192a5cbdb25b7af6f4fa17ab07a026b2e11b3137250e6d9",
-         intel: "e61e5db3f03d4a7fad9dbe2cd706248b28d1c494514030875efb9efbbb661a0b"
+  version "0.3.0"
+  sha256 arm:   "2555d4e2f45bf96aed8b5bc13f72eeaf6a896e9dc23c68e412a1af8fe8888057",
+         intel: "0834b964bb4aa6179223fb1706bfd8923148d473ca1e640fe64832e898e8e747"
 
   url "https://github.com/GOODBOY008/labelize-printer/releases/download/v#{version}/LabelizePrinter-#{version}-macos-#{arch}-release.pkg"
   name "Labelize Printer"

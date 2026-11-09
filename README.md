@@ -1,6 +1,6 @@
 # Labelize Printer Homebrew tap
 
-Labelize Printer is a local virtual printer and label workspace that saves labels as PDF or PNG. This tap distributes the macOS PKG for Apple Silicon and Intel, targeting macOS 13 or later. [Project and documentation](https://github.com/GOODBOY008/labelize-printer)
+Labelize Printer is a local virtual printer and multi-tab label workspace that saves labels as PDF or PNG. This tap distributes the macOS PKG for Apple Silicon and Intel, targeting macOS 13 or later. [Project and documentation](https://github.com/GOODBOY008/labelize-printer)
 
 ## Install
 
@@ -15,9 +15,9 @@ brew trust --cask goodboy008/labelize-printer/labelize-printer
 brew install --cask goodboy008/labelize-printer/labelize-printer
 ```
 
-Open Labelize Printer from Applications to add the local printer and choose where to save files. Since v0.2.0, the Labels workspace also opens ZPL, EPL, TSPL/TSC, CPCL, and DPL files, previews every page, and saves PDF/PNG. The visual designer supports text, Code 128, QR codes, rectangles, and images, with portable `.labelize.json` templates and font import for Chinese and other scripts.
+Open Labelize Printer from Applications. In **Settings → System printer**, add the local printer; use **Settings → Output defaults** for its output format and folder. The v0.3.0 **Workspace** opens ZPL, EPL, TSPL/TSC, CPCL, and DPL files in separate tabs, updates previews automatically, and restores local drafts after a restart. Each tab has its own PDF/PNG export options. The visual designer supports text, Code 128, QR codes, rectangles, and images, with portable `.labelize.json` templates and font import for Chinese and other scripts.
 
-Use the title-bar language button to switch between English and Simplified Chinese. The macOS PKGs are unsigned, and app bundles use ad-hoc signatures. See the release notes for verified environments, outstanding desktop checks, and Windows/Linux installers. [Printer releases](https://github.com/GOODBOY008/labelize-printer/releases)
+Use the language button above Settings in the sidebar to switch between English and Simplified Chinese. The macOS PKGs are unsigned, and app bundles use ad-hoc signatures. See the release notes for verified environments, outstanding desktop checks, and Windows/Linux installers. [Printer releases](https://github.com/GOODBOY008/labelize-printer/releases)
 
 ## Upgrade and uninstall
 

@@ -1,9 +1,9 @@
 cask "labelize-studio" do
   arch arm: "arm64", intel: "x86_64"
 
-  version "0.4.0"
-  sha256 arm:   "7b323c46e17737f0a165e414d0bb2a1f8f06bd74ae89be875e24438fce566ab3",
-         intel: "4e99db651385222b0cfa01adc92fea99e9c10740a61b7afa85de0ec59334924f"
+  version "0.5.0"
+  sha256 arm:   "6a80566abe45c4b5b99dbb3fe99a1dae37e1782dd9bb73b2d6efcb741547fdde",
+         intel: "ea8c9180981bfc80f3afd8b4eca995282afe3a53bc20465f9a109820641654c5"
 
   url "https://github.com/GOODBOY008/labelize-studio/releases/download/v#{version}/LabelizeStudio-#{version}-macos-#{arch}-release.pkg"
   name "Labelize Studio"
